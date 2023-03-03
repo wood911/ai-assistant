@@ -17,9 +17,9 @@ export async function postMessage(
 }
 
 export async function postMessagePrivate(
-  apiKey: string | null,
-  question: string,
-  options: SendMessageOptions,
+    apiKey: string | null,
+    question: string,
+    options: { conversationId: string | undefined; parentMessageId: string | undefined; promptPrefix: string },
 ): Promise<ChatMessage> {
   if (!apiKey) {
     return postMessage(question, options);

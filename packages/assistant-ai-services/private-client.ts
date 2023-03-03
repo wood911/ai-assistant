@@ -59,6 +59,10 @@ async function getAvailableClient(key: string) {
     apiKey: key,
     debug: true,
     messageStore: messageStore,
+    completionParams: {
+      model: 'gpt-3.5-turbo',
+      // temperature: 0.5,
+    }
   });
 
   clientPool.set(key, client);
